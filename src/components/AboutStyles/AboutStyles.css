@@ -1,0 +1,49 @@
+.learnMore {
+    color: #fff;
+    font-family: inherit;
+    display: inline-block;
+    width: 8em;
+    height: 2.6em;
+    line-height: 2.5em;
+    margin: 20px;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: color 0.5s;
+    z-index: 1;
+    font-size: 17px;
+    border-radius: 6px;
+    font-weight: 500;
+    background-color: #1ca3ec;
+  }
+  
+  .learnMore:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: #5dbcdf;
+    height: 150px;
+    width: 200px;
+    border-radius: 50%;
+  }
+  
+  .learnMore:hover {
+    color: #fff;
+  }
+  
+  .learnMore:before {
+    top: 100%;
+    left: 100%;
+    transition: all 0.7s;
+  }
+  
+  .learnMore:hover:before {
+    top: -30px;
+    left: -30px;
+  }
+  
+  .learnMore:active:before {
+    background: #65cef5;
+    transition: background 0s;
+  }
+  
