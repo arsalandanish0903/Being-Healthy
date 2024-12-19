@@ -17,16 +17,16 @@ function AboutStyles() {
         <div className="container mx-auto px-4 py-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center overflow-hidden">
                 {/* Image Section */}
-                <div className="relative overflow-hidden rounded-lg shadow-lg" data-aos='fade-left'>
+                <div className="relative overflow-hidden rounded-lg shadow-lg">
                     <img 
-                        src="/about-style2-bg.jpg" 
+                        src="/pexels-gustavo-fring-4920467.jpg" 
                         alt="Dehydration Illustration" 
                         className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
                     />
                 </div>
 
                 {/* Content Section */}
-                <div className="space-y-6" data-aos='fade-right'>
+                <div className="space-y-6">
                     {/* Header Section */}
                     <div className="flex items-center gap-4">
                         <IoShieldCheckmark className="text-4xl text-blue-500" />
@@ -44,7 +44,7 @@ function AboutStyles() {
                 </div>
 
                 {/* Second Content Section */}
-                <div className="space-y-6" data-aos='fade-left'>
+                <div className="space-y-6">
                     {/* Header Section */}
                     <div className="flex items-center gap-4">
                         <FaMedal className="text-4xl text-blue-500" />
@@ -61,9 +61,9 @@ function AboutStyles() {
                 </div>
 
                 {/* Second Image Section */}
-                <div className="relative overflow-hidden rounded-lg shadow-lg" data-aos='fade-right'>
+                <div className="relative overflow-hidden rounded-lg shadow-lg">
                     <img 
-                        src="/about-style2-bg.jpg" 
+                        src="/pexels-stephen-noulton-421904730-17290952.jpg" 
                         alt="High Hydrogen Concentration Illustration" 
                         className="w-full h-[400px] object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
                     />

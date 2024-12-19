@@ -16,7 +16,7 @@ function Disclaimer() {
       {/* Hero Section */}
       <div className="relative">
         <img
-          src="/public/disclamer.jpg"
+          src="/disclamer.jpg"
           alt="Disclaimer Background"
           className="w-full h-[500px] object-cover shadow-lg transition-transform transform hover:scale-105 duration-300"
         />
@@ -41,7 +41,7 @@ function Disclaimer() {
         {/* Section 1: Image Left, Content Right */}
         <section className="flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-8" data-aos="fade-right">
           <img
-            src="../../../public/disclaimer-examples.png"
+            src="/disclaimer-examples.png"
             alt="General Disclaimer"
             className="w-full lg:w-1/2 rounded-lg shadow-lg"
           />
@@ -56,7 +56,7 @@ function Disclaimer() {
         {/* Section 2: Content Left, Image Right */}
         <section className="flex flex-col lg:flex-row-reverse items-center space-y-8 lg:space-y-0 lg:space-x-8" data-aos="fade-left">
           <img
-            src="../../../public/liability.webp"
+            src="/liability.webp"
             alt="No Liability"
             className="w-full lg:w-1/2 rounded-lg shadow-lg"
           />
@@ -76,7 +76,7 @@ function Disclaimer() {
         {/* Section 3: Image Left, Content Right */}
         <section className="flex flex-col lg:flex-row items-center space-y-8 lg:space-y-0 lg:space-x-8" data-aos="fade-up">
           <img
-            src="../../../public/thirdPartyLinks.webp"
+            src="/thirdPartyLinks.webp"
             alt="Third-Party Links"
             className="w-full lg:w-1/2 rounded-lg shadow-lg"
           />

@@ -33,11 +33,11 @@ const ContactUs = () => {
     <>
       <div className="mb-10 relative">
         <img
-          src="/public/getintouch.jpg"
+          src="getintouch.jpg"
           alt="Glass of Water"
           className="w-full h-80 object-cover shadow-lg transition-transform transform hover:scale-105 duration-300"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-6 text-center rounded-xl shadow-lg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-6 text-center shadow-lg">
           <h1
             className="text-5xl sm:text-6xl font-extrabold mb-4 text-shadow text-white animate__animated animate__fadeIn"
             data-aos="fade-left"

@@ -37,7 +37,7 @@ function Cirtificate() {
                 <h1 className="text-xl uppercase text-[#1ca3ec] font-bold my-4">Certificates</h1>
                 <p className="text-3xl font-bold leading-10">
                     These are the Certification<br />
-                    for BlueHealth Water Ionizer
+                    for Being Healthy Water Ionizer
                 </p>
             </div>
 

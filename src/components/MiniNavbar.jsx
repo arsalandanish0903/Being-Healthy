@@ -13,7 +13,7 @@ function MiniNavbar() {
                     <div className='text-white flex items-center gap-8'>
                         <span className='mr-4 text-lg '>Free to Call Us at</span>
                         <span className='flex items-center mr-4 text-lg '>
-                            <FaPhoneVolume className='mr-2 text-[#65cef5]' /> +91 99701 53605
+                            <FaPhoneVolume className='mr-2 text-[#65cef5]' /> +91 8888832676
                         </span>
                         <span className='flex items-center mr-4 text-lg '><MdWatchLater className='mr-2 text-xl text-[#65cef5]'/> Mon - Sat: 11.00 AM to 6.00 PM</span>
                     </div>

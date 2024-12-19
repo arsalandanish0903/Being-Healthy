@@ -18,12 +18,12 @@ function AboutBfour() {
       <div className="relative">
         {/* Image Container */}
         <img
-          src="/public/fancy-summer-banner-depicting-water-nature-ai-generation_201606-4418.avif"
+          src="/fancy-summer-banner-depicting-water-nature-ai-generation_201606-4418.avif"
           alt="Glass of Water"
           className="w-full h-80 object-cover shadow-lg  transition-transform transform hover:scale-105 duration-300"
         />
         {/* Text Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-6 text-center rounded-xl shadow-lg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 text-white p-6 text-center  shadow-lg">
           <h1 className="text-5xl sm:text-6xl font-extrabold mb-4 text-shadow text-white animate__animated animate__fadeIn" data-aos='fade-left'>About Being Healthy</h1>
           <p className="text-lg sm:text-xl font-light max-w-3xl opacity-90" data-aos='fade-right'>
             We are committed to bringing the finest water solutions to your doorstep, ensuring your health is supported by the best resources available.
@@ -34,7 +34,7 @@ function AboutBfour() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10 px-6 sm:px-36 sm:py-8">
         <div data-aos='fade-left' className="flex justify-center transition-transform transform hover:scale-105 duration-300">
           <img
-            src="../../../public/DALL·E 2024-11-25 15.48.40 - A visually striking water-themed design featuring a sleek, modern kitchen countertop with a high-tech water ionizer prominently placed. The background.webp"
+            src="/Ionozer 2.png"
             alt="Modern Kitchen with Water Ionizer"
             className="w-full h-auto rounded-lg shadow-xl transition-all transform hover:rotate-2 duration-300"
           />
@@ -70,7 +70,7 @@ function AboutBfour() {
 
         <div className="flex justify-center transition-transform transform hover:scale-105 duration-300" data-aos='fade-left'>
           <img
-            src="../../../public/DALL·E 2024-11-25 15.54.38 - A sleek and modern water ionizer placed on a clean kitchen countertop with a focus on advanced filtration and ionization technology. The ionizer shoul.webp"
+            src="/bh-2000Update.png"
             alt="Modern Kitchen with Water Ionizer"
             className="w-full h-auto rounded-lg shadow-xl transition-all transform hover:rotate-2 duration-300"
           />

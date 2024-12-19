@@ -390,249 +390,7 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FaBars, FaTimes, FaChevronUp, FaChevronDown } from "react-icons/fa";
 import './Navbar.css'
-// const Navbar = () => {
-//   const activeLink = "text-blue-500 bg-white font-semibold rounded-md sm:p-2";
-//   const defaultLink =
-//     "hover:text-blue-500 hover:bg-white transition duration-300 sm:p-2 rounded-md";
 
-//   const [showDropdown, setShowDropdown] = useState({
-//     company: false,
-//     waterIonizer: false,
-//     media: false,
-//   });
-//   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-//   const [navbarFixedScroll, setNavbarFixedScroll] = useState(false);
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       setNavbarFixedScroll(window.scrollY > 300);
-//     };
-//     window.addEventListener("scroll", handleScroll);
-//     return () => window.removeEventListener("scroll", handleScroll);
-//   }, []);
-
-//   const toggleDropdown = (section) => {
-//     setShowDropdown((prev) => ({
-//       ...prev,
-//       [section]: !prev[section],
-//     }));
-//   };
-
-//   const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-
-//   return (
-//     <nav
-//       className={`${
-//         navbarFixedScroll
-//           ? "fixed top-0 left-0 w-full bg-white shadow-md z-50"
-//           : "relative navbarShadow"
-//       } transition-all duration-300`}
-//     >
-//       <div className="container mx-auto px-6 py-3 flex justify-between items-center">
-//         {/* Logo */}
-//         <div>
-//           <img
-//             src="/public/mainlogo.png"
-//             alt="Logo"
-//             className="object-cover w-48"
-//           />
-//         </div>
-
-//         {/* Hamburger Menu Icon for Mobile */}
-//         <div className="lg:hidden relative" onClick={toggleMobileMenu}>
-//   {isMobileMenuOpen ? (
-//     <FaTimes className="text-2xl text-blue-500 z-50" />
-//   ) : (
-//     <FaBars className="text-2xl text-blue-500 z-50" />
-//   )}
-// </div>
-
-//         {/* Navigation Links */}
-//         <ul
-//            className={`sm:flex sm:items-center z-40 lg:space-x-8 absolute sm:static sm:bg-transparent w-full sm:w-auto top-0 left-0  flex-col sm:flex-row items-center transition-transform duration-300 ${
-//             isMobileMenuOpen ? "translate-x-0 h-[350px]  bg-black text-white  mt-28 px-6 py-8" : "-translate-x-full lg:translate-x-0 sm:m-0 mt-28"
-//           }`}
-//         >
-//           <li>
-//             <NavLink
-//               to="/"
-//               className={({ isActive }) =>
-//                 isActive
-//                   ? `${activeLink} p-2`
-//                   : `${defaultLink} transition duration-300 ${isMobileMenuOpen ? 'my-4' : 'my-4'}`
-//               }
-//             >
-//               Home
-//             </NavLink>
-//           </li>
-
-//           {/* Company */}
-//           <li className="relative group">
-//             <button
-//               onClick={() => toggleDropdown("company")}
-//               className={`${defaultLink} flex items-center justify-between ${isMobileMenuOpen ? 'my-4' : 'my-4'}`}
-//             >
-//               Company{" "}
-//               {showDropdown.company ? (
-//                 <FaChevronUp className="ml-2" />
-//               ) : (
-//                 <FaChevronDown className="ml-2" />
-//               )}
-//             </button>
-//             <ul
-//               className={`absolute bg-blue-500 text-white w-48 mt-2 rounded-md sm:py-4 sm:px-2 shadow-lg transition-transform duration-300 ${
-//                 showDropdown.company
-//                   ? "scale-100 opacity-100"
-//                   : "scale-95 opacity-0 hidden"
-//               }`}
-//               style={{ zIndex: 100 }}
-//             >
-//               <li className="sm:my-4">
-//                 <NavLink
-//                   to="/company/about-bfour"
-//                   className={({ isActive }) =>
-//                     isActive ? `${activeLink}` : `${defaultLink} ${isMobileMenuOpen ? 'my-4' : 'my-4'}`
-//                   }
-//                 >
-//                   About Being Healthy
-//                 </NavLink>
-//               </li>
-//               <li className="sm:my-4">
-//                 <NavLink
-//                   to="/company/legal-document"
-//                   className={({ isActive }) =>
-//                     isActive ? `${activeLink} ` : `${defaultLink} ${isMobileMenuOpen ? 'my-4' : 'my-4'}`
-//                   }
-//                 >
-//                   Legal Document
-//                 </NavLink>
-//               </li>
-//             </ul>
-//           </li>
-//           <li>
-//             <NavLink
-//               to="/products"
-//               className={({ isActive }) =>
-//                 isActive
-//                   ? `${activeLink} p-2`
-//                   : `${defaultLink} transition duration-300 ${isMobileMenuOpen ? 'my-4' : 'my-4'}`
-//               }
-//             >
-//               Products
-//             </NavLink>
-//           </li>
-//           {/* Water Ionizer */}
-//           <li className="relative group">
-//             <button
-//               onClick={() => toggleDropdown("waterIonizer")}
-//               className={`${defaultLink} flex items-center justify-between ${isMobileMenuOpen ? 'my-4' : 'my-4'}`}
-//             >
-//               Water Ionizer{" "}
-//               {showDropdown.waterIonizer ? (
-//                 <FaChevronUp className="ml-2" />
-//               ) : (
-//                 <FaChevronDown className="ml-2" />
-//               )}
-//             </button>
-//             <ul
-//               className={`absolute bg-blue-500 text-white w-48 mt-2 rounded-md sm:py-4 sm:px-2 shadow-lg transition-transform duration-300 ${
-//                 showDropdown.waterIonizer
-//                   ? "scale-100 opacity-100"
-//                   : "scale-95 opacity-0 hidden"
-//               }`}
-//               style={{ zIndex: 100 }}
-//             >
-//               {[
-//                 // { path: "/water-ionizer/b7", label: "B7" },
-//                 { path: "/water-ionizer/b9", label: "BH-9" },
-//                 { path: "/water-ionizer/b9-plus", label: "BH-9 Plus" },
-//                 { path: "/water-ionizer/disclaimer", label: "Disclaimer" },
-//                 { path: "/water-ionizer/certification", label: "Certification" },
-//               ].map((item, index) => (
-//                 <li key={index} className="sm:my-4 w-full">
-//                   <NavLink
-//                     to={item.path}
-//                     className={({ isActive }) =>
-//                       isActive ? `${activeLink} w-full` : `${defaultLink} w-full`
-//                     }
-//                   >
-//                     {item.label}
-//                   </NavLink>
-//                 </li>
-//               ))}
-//             </ul>
-//           </li>
-
-//           {/* Gallery */}
-//           {/* <li className="relative group">
-//             <button
-//               onClick={() => toggleDropdown("media")}
-//               className={`${defaultLink} flex items-center justify-between`}
-//             >
-//               Gallery{" "}
-//               {showDropdown.media ? (
-//                 <FaChevronUp className="ml-2" />
-//               ) : (
-//                 <FaChevronDown className="ml-2" />
-//               )}
-//             </button>
-//             <ul
-//               className={`absolute bg-blue-500 text-white w-56 mt-2 rounded-md sm:py-4 sm:px-2 shadow-lg transition-transform duration-300 ${
-//                 showDropdown.media
-//                   ? "scale-100 opacity-100"
-//                   : "scale-95 opacity-0 hidden"
-//               }`}
-//               style={{ zIndex: 100 }}
-//             >
-//               <li className="sm:my-4">
-//                 <NavLink
-//                   to="/media/gallery"
-//                   className={({ isActive }) =>
-//                     isActive
-//                       ? `${activeLink} font-semibold`
-//                       : `${defaultLink} hover:bg-white hover:text-black`
-//                   }
-//                 >
-//                   Image Gallery
-//                 </NavLink>
-//               </li>
-//               <li>
-//                 <NavLink
-//                   to="/media/video"
-//                   className={({ isActive }) =>
-//                     isActive
-//                       ? `${activeLink} font-semibold`
-//                       : `${defaultLink} hover:bg-white hover:text-black`
-//                   }
-//                 >
-//                   Video Gallery
-//                 </NavLink>
-//               </li>
-//             </ul>
-//           </li> */}
-
-//           <li>
-//             <NavLink
-//               to="/contact-us"
-//               className={({ isActive }) =>
-//                 isActive
-//                   ? `${activeLink} p-2`
-//                   : `${defaultLink} transition duration-300`
-//               }
-//             >
-//               Contact Us
-//             </NavLink>
-//           </li>
-//         </ul>
-
-//         {/* Demo Button */}
-//         <button className="hidden forDemo">
-//           For Demo
-//         </button>
-//       </div>
-//     </nav>
-//   );
-// };
 const Navbar = () => {
   const activeLink = "text-blue-500 bg-white font-semibold rounded-md sm:p-2";
   const defaultLink =
@@ -666,24 +424,23 @@ const Navbar = () => {
   const handleLinkClick = (dropdown) => {
     setShowDropdown((prev) => ({
       ...prev,
-      [dropdown]: false, // Close the dropdown when a link is clicked
+      [dropdown]: false,
     }));
-    window.scrollTo(0, 0); // Scroll to the top
+    window.scrollTo(0, 0);
   };
 
   return (
     <nav
-      className={`${
-        navbarFixedScroll
-          ? "fixed top-0 left-0 w-full bg-white shadow-md z-50"
-          : "relative navbarShadow"
-      } transition-all duration-300`}
+      className={`${navbarFixedScroll
+        ? "fixed top-0 left-0 w-full bg-white shadow-md z-50"
+        : "relative"
+        } transition-all duration-300`}
     >
-      <div className="container mx-auto px-6 py-3 flex justify-between items-center overflow-hidden">
+      <div className="container mx-auto px-6 py-3 flex justify-between items-center">
         {/* Logo */}
         <div>
           <img
-            src="/public/mainlogo.png"
+            src="/mainlogo.png"
             alt="Logo"
             className="object-cover w-48"
           />
@@ -700,11 +457,10 @@ const Navbar = () => {
 
         {/* Navigation Links */}
         <ul
-          className={`sm:flex sm:items-center z-40 lg:space-x-8 absolute sm:static sm:bg-transparent w-full sm:w-auto top-0 left-0  flex-col sm:flex-row items-center transition-transform duration-300 ${
-            isMobileMenuOpen
-              ? "translate-x-0 h-[350px]  bg-black text-white  mt-28 px-6 py-8"
-              : "-translate-x-full lg:translate-x-0 sm:m-0 mt-28"
-          }`}
+          className={`sm:flex sm:items-center gap-5 flex items-start z-50 lg:space-x-8 absolute sm:static sm:bg-transparent w-full sm:w-auto top-0 left-0  flex-col sm:flex-row  transition-transform duration-300 ${isMobileMenuOpen
+            ? "translate-x-0 h-screen  bg-[#2389DA] text-white  mt-28 px-6 py-8"
+            : "-translate-x-full lg:translate-x-0 sm:m-0 mt-28"
+            }`}
         >
           <li>
             <NavLink
@@ -712,20 +468,21 @@ const Navbar = () => {
               className={({ isActive }) =>
                 isActive
                   ? `${activeLink} p-2`
-                  : `${defaultLink} transition duration-300 ${isMobileMenuOpen ? 'my-4' : 'my-4'}` 
+                  : `${defaultLink} transition duration-300 p-2 ${isMobileMenuOpen ? 'my-4' : 'my-4'}`
               }
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Home
             </NavLink>
           </li>
 
           {/* Company */}
-          <li className="relative group">
+          {/* <li className="relative group">
             <button
               onClick={() => toggleDropdown("company")}
-              className={`${defaultLink} flex items-center justify-between ${isMobileMenuOpen ? 'my-4' : 'my-4'}`}
+              className={`${defaultLink} flex items-center p-1 justify-between m-0`}
             >
-              Company{" "}
+              Company
               {showDropdown.company ? (
                 <FaChevronUp className="ml-2" />
               ) : (
@@ -733,53 +490,106 @@ const Navbar = () => {
               )}
             </button>
             <ul
-              className={`absolute bg-blue-500 text-white w-48 mt-2 rounded-md sm:py-4 sm:px-2 shadow-lg transition-transform duration-300 ${
+              className={`absolute bg-blue-500 p-4 text-white flex flex-col gap-3 lg:gap-0  w-48 mt-2 rounded-md sm:py-4 sm:px-2 shadow-lg transition-transform duration-300 ${
                 showDropdown.company ? "scale-100 opacity-100" : "scale-95 opacity-0 hidden"
               }`}
-              style={{ zIndex: 100 }}
+              style={{zIndex: 999}}
             >
               <li className="sm:my-4">
                 <NavLink
                   to="/company/about-bfour"
                   className={({ isActive }) =>
-                    isActive ? `${activeLink}` : `${defaultLink} ${isMobileMenuOpen ? 'my-4' : 'my-4'}` 
+                    isActive ? `${activeLink} p-1` : `${defaultLink} ${isMobileMenuOpen ? 'my-4' : 'my-4'} p-1` 
                   }
-                  onClick={() => handleLinkClick("company")}
+                  onClick={() => handleLinkClick("company") ||  setIsMobileMenuOpen(false)}
                 >
                   About Being Healthy
                 </NavLink>
               </li>
               <li className="sm:my-4">
                 <NavLink
-                  to="/company/legal-document"
+                  to="/company/about-manufecture"
                   className={({ isActive }) =>
-                    isActive ? `${activeLink}` : `${defaultLink} ${isMobileMenuOpen ? 'my-4' : 'my-4'}` 
+                    isActive ? `${activeLink} p-1` : `${defaultLink} ${isMobileMenuOpen ? 'my-4' : 'my-4'} p-1` 
                   }
-                  onClick={() => handleLinkClick("company")}
+                  onClick={() => handleLinkClick("company") || setIsMobileMenuOpen(false)}
                 >
-                  Legal Document
+                  About Manufacturer
+                </NavLink>
+              </li>
+            </ul>
+          </li> */}
+          <li className="relative group">
+            <button
+              className={`${defaultLink} flex items-center p-1 justify-between m-0 lg:hover:bg-white lg:hover:text-blue-500`}
+            >
+              Company
+              <FaChevronDown className="ml-2" />
+            </button>
+            <ul
+              className={`absolute bg-blue-500 p-4 text-white flex flex-col gap-3 w-48 mt-2 rounded-md sm:py-4 sm:px-2 shadow-lg transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible`}
+              style={{
+                zIndex: 999,
+                transitionDelay: '0s', // Add a slight delay for smooth transitions
+              }}
+            >
+              <li className="sm:my-2">
+                <NavLink
+                  to="/company/about-beinghealthy"
+                  className={({ isActive }) =>
+                    isActive ? `${activeLink} p-1` : `${defaultLink} p-1`
+                  }
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About Being Healthy
+                </NavLink>
+              </li>
+              <li className="sm:my-2">
+                <NavLink
+                  to="/company/about-manufacture"
+                  className={({ isActive }) =>
+                    isActive ? `${activeLink} p-1` : `${defaultLink} p-1`
+                  }
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  About Manufacturer
                 </NavLink>
               </li>
             </ul>
           </li>
+
           <li>
             <NavLink
               to="/products"
               className={({ isActive }) =>
                 isActive
                   ? `${activeLink} p-2`
-                  : `${defaultLink} transition duration-300 ${isMobileMenuOpen ? 'my-4' : 'my-4'}` 
+                  : `${defaultLink} transition duration-300 p-2 ${isMobileMenuOpen ? 'my-4' : 'my-4'}`
               }
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Products
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/technology"
+              className={({ isActive }) =>
+                isActive
+                  ? `${activeLink} p-2`
+                  : `${defaultLink} transition duration-300 p-2 ${isMobileMenuOpen ? 'my-4' : 'my-4'}`
+              }
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Technology
+            </NavLink>
+          </li>
 
           {/* Water Ionizer */}
-          <li className="relative group">
+          {/* <li className="relative group">
             <button
               onClick={() => toggleDropdown("waterIonizer")}
-              className={`${defaultLink} flex items-center justify-between ${isMobileMenuOpen ? 'my-4' : 'my-4'}`}
+              className={`${defaultLink} flex items-center p-1 justify-between m-0`}
             >
               Water Ionizer{" "}
               {showDropdown.waterIonizer ? (
@@ -789,19 +599,53 @@ const Navbar = () => {
               )}
             </button>
             <ul
-              className={`absolute bg-blue-500 text-white w-48 mt-2 rounded-md sm:py-4 sm:px-2 shadow-lg transition-transform duration-300 ${
-                showDropdown.waterIonizer ? "scale-100 opacity-100" : "scale-95 opacity-0 hidden"
-              }`}
+              className={`absolute bg-blue-500 text-white flex flex-col gap-3 lg:gap-0 p-4 w-48 mt-2 rounded-md sm:py-4 sm:px-2 shadow-lg transition-transform duration-300 ${showDropdown.waterIonizer ? "scale-100 opacity-100" : "scale-95 opacity-0 hidden"
+                }`}
               style={{ zIndex: 100 }}
             >
-              {[{ path: "/water-ionizer/b9", label: "BH-9" }, { path: "/water-ionizer/disclaimer", label: "Disclaimer" }, { path: "/water-ionizer/certification", label: "Certification" }].map((item, index) => (
+              {[{ path: "/water-ionizer/b9", label: "BH-9000" }, { path: "/water-ionizer/akthreethousand", label: "BH-3000" }, { path: "/water-ionizer/aktwothousand", label: "BH-2000" }, { path: "/water-ionizer/digitalnull", label: "Digital Null" }, { path: "/water-ionizer/waterrichcup", label: "Hydrogen WaterBottle" }, { path: "/water-ionizer/disclaimer", label: "Disclaimer" }, { path: "/water-ionizer/certification", label: "Certification" }].map((item, index) => (
                 <li key={index} className="sm:my-4 w-full">
                   <NavLink
                     to={item.path}
                     className={({ isActive }) =>
-                      isActive ? `${activeLink} w-full` : `${defaultLink} w-full`
+                      isActive ? `${activeLink} w-full p-1` : `${defaultLink} w-full p-1`
                     }
-                    onClick={() => handleLinkClick("waterIonizer")}
+                    onClick={() => handleLinkClick("waterIonizer") || setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </li> */}
+          <li className="relative group">
+            <button
+              className={`${defaultLink} flex items-center p-1 justify-between m-0`}
+            >
+              Water Ionizer
+              <FaChevronDown className="ml-2" />
+            </button>
+            <ul
+              className={`absolute bg-blue-500 text-white flex flex-col gap-3 lg:gap-0 p-4 w-48 mt-2 rounded-md sm:py-4 sm:px-2 shadow-lg transform transition-all duration-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:translate-y-2`}
+              style={{ zIndex: 100 }}
+            >
+              {[
+                { path: "/water-ionizer/bhninethousand", label: "BH-9000" },
+                { path: "/water-ionizer/bhfourthousand", label: "BH-4000" },
+                // { path: "/water-ionizer/akthreethousand", label: "BH-3000" },
+                { path: "/water-ionizer/bhtwothousand", label: "BH-2000" },
+                { path: "/water-ionizer/faucet", label: "Faucet" },
+                { path: "/water-ionizer/hydrogenwater", label: "Hydrogen Bottle" },
+                { path: "/water-ionizer/disclaimer", label: "Disclaimer" },
+                { path: "/water-ionizer/certification", label: "Certification" },
+              ].map((item, index) => (
+                <li key={index} className="sm:my-2 w-full">
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      isActive ? `${activeLink} w-full p-1` : `${defaultLink} w-full p-1`
+                    }
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {item.label}
                   </NavLink>
@@ -810,24 +654,21 @@ const Navbar = () => {
             </ul>
           </li>
 
+
           <li>
             <NavLink
               to="/contact-us"
               className={({ isActive }) =>
                 isActive
                   ? `${activeLink} p-2`
-                  : `${defaultLink} transition duration-300`
+                  : `${defaultLink} transition duration-300 p-2`
               }
+              onClick={() => setIsMobileMenuOpen(false)}
             >
               Contact Us
             </NavLink>
           </li>
         </ul>
-
-        {/* Demo Button */}
-        <button className="hidden forDemo">
-          For Demo
-        </button>
       </div>
     </nav>
   );

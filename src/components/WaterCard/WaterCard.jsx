@@ -12,22 +12,23 @@ const Ocean = () => {
             once: true, // Only animate elements once when scrolling
         });
         // Initialize the typing effect when the component mounts
-        const typing = new Typed(".text", {
-            strings: ["Catalyst", "Carrier", "Solvent", "Nutrient", "Facilitator"],
-            typeSpeed: 100,
-            backSpeed: 40,
-            loop: true,
-        });
+        // const typing = new Typed(".text", {
+        //     strings: ["Catalyst", "Carrier", "Solvent", "Nutrient", "Facilitator"],
+        //     typeSpeed: 100,
+        //     backSpeed: 40,
+        //     loop: true,
+        // });
 
-        // Cleanup on unmount
-        return () => {
-            typing.destroy();
-        };
+        // // Cleanup on unmount
+        // return () => {
+        //     typing.destroy();
+        // };
     }, []);
     return (
-        <div className="h-screen container mx-auto bg-[#1ca3ec] sm:px-12 lg:px-36 py-8 sm:py-12 lg:py-24 flex flex-col sm:flex-col lg:flex-row items-center justify-center gap-8 overflow-hidden">
-            <div data-aos='fade-down' className="sm:px-36 bg-transparent  bg-opacity-10 sm:py-8  shadow-lg">
-                <div className="flex items-center gap-4">
+        <div className="h-screen bg-[#1ca3ec] sm:px-12 lg:px-36 py-8 sm:py-12  flex flex-col sm:flex-col  items-center justify-center gap-8 overflow-hidden">
+            <div className="container mx-auto">
+                {/* <div data-aos='fade-down' className="sm:px-36 bg-transparent  bg-opacity-10 sm:py-8  shadow-lg">
+                <div className="flex items-center gap-4 ">
                     <div className="text-4xl font-bold text-white uppercase">
                         Water Is
                     </div>
@@ -35,8 +36,9 @@ const Ocean = () => {
                         Life
                     </div>
                 </div>
+            </div> */}
+                <AutoSlider />
             </div>
-            <AutoSlider />
         </div>
 
 

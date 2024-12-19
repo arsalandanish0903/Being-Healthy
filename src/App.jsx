@@ -15,6 +15,15 @@ import OurBanker from "./pages/OurBanker";
 import ContactUs from "./pages/ContactUs/ContactUs";
 import Products from "./pages/products/Products";
 import BhNine from "./pages/WaterIonizer/BH-9/BhNine";
+import AboutManufecture from "./pages/Company/AboutManufecture/AboutManufecture";
+import EECcontent from "./pages/EEC/EECcontent";
+import AkThreeThousand from "./pages/WaterIonizer/Ak-3000/AkThreeThousand";
+import AkTwoThousand from "./pages/WaterIonizer/Ak-2000/AkTwoThousand";
+import DigitalNull from "./pages/WaterIonizer/DigitalNull/DigitalNull";
+import WaterRichCup from "./pages/WaterIonizer/WaterRichCup/WaterRichCup";
+import HyFourThousand from "./pages/WaterIonizer/Hy-4000/HyFourThousand";
+import OrderForm from "./pages/OrderForm/OrderForm";
+import Technology from "./pages/Technology/Technology";
 
 const App = () => {
   return (
@@ -23,19 +32,25 @@ const App = () => {
         {/* Main Route with Layout */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/company/about-bfour" element={<AboutBfour />} />
-          <Route path="/company/legal-document" element={<LegalDocument />} />
+          <Route path="/company/about-beinghealthy" element={<AboutBfour />} />
+          <Route path="/company/about-manufacture" element={<AboutManufecture />} />
+          {/* <Route path="/company/legal-document" element={<LegalDocument />} /> */}
 
           {/* Water Ionizer Routes */}
           <Route path="/water-ionizer/manufactured-by" element={<ManufacturedBy />} />
           
-          <Route path="/water-ionizer/b9" element={<BhNine />} />
-          {/* <Route path="/water-ionizer/b9-plus" element={<B9Plus />} /> */}
+          <Route path="/water-ionizer/bhninethousand" element={<BhNine />} />
+          <Route path="/water-ionizer/bhfourthousand" element={<HyFourThousand />} />
+          <Route path="/water-ionizer/akthreethousand" element={<AkThreeThousand />} />
+          <Route path="/water-ionizer/bhtwothousand" element={<AkTwoThousand />} />
+          <Route path="/water-ionizer/faucet" element={<DigitalNull />} />
+          <Route path="/water-ionizer/hydrogenwater" element={<WaterRichCup />} />
           <Route path="/water-ionizer/disclaimer" element={<Disclaimer />} />
           <Route path="/water-ionizer/certification" element={<Certification />} />
 
           {/* Products Routes */}
           <Route path="/products" element={<Products/>} />
+          <Route path="/technology" element={<Technology/>} />
 
           {/* Media Routes */}
           <Route path="/media/gallery" element={<Gallery />} />
@@ -44,6 +59,9 @@ const App = () => {
           {/* Other Routes */}
           <Route path="/our-banker" element={<OurBanker />} />
           <Route path="/contact-us" element={<ContactUs />} />
+          <Route path="/eeccontent" element={<EECcontent />} />
+
+          <Route path="/order" element={<OrderForm />} />
         </Route>
       </Routes>
     </Router>
